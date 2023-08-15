@@ -46,7 +46,7 @@ Make sure you have poetry installed on your system. If not, visit [their documen
 
 To set up your environment run the following from the CLI
 ```console
-$ poetry intstall
+poetry intstall
 ```
 The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. 
 
@@ -57,7 +57,7 @@ We need to authenticate to OpenAI to send requests to their servers. To do so si
 ### Running the dashboard
 We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
 ```console
-$ streamlit run app/chatbot.py
+streamlit run app/chatbot.py
 ```
 
 Voila - your chatbot is now up an running on your localhost!
