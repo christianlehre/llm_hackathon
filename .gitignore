@@ -1,0 +1,11 @@
+# Secrets stored as environmental variables in .env-file
+.env
+
+# No need to check-in virtual environment
+.venv
+
+# Mac-only files 
+.DS_Store
+
+# Ignore all pycache dirs across the repo
+**/__pycache__/
