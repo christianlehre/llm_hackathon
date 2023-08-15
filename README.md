@@ -1,5 +1,5 @@
 # Hackathon 
-This repo contains some boilerplate code for setting up a custom chatbot that you can use to chat with your own sources of data. We will use the OpenAI API to send requests to their models, either `gpt-3.5-turbo` or `gpt-4`, which we will connect with our own data sources using Retrieval Augmentation Generation. 
+This repo contains some boilerplate code for setting up a custom chatbot that you can use to chat with your own data. We will use the OpenAI API to send requests to their models, either `gpt-3.5-turbo` or `gpt-4`, which we will connect with our own data sources using Retrieval Augmentation Generation. 
 
 Be aware that this setup sends requests over the OpenAI API, and as such the prompts are stored on OpenAIs servers in USA for max 30 days to monitor for abuse and misuse. Consequently, we should not use this setup to upload sensitive nor proprietary data.
 
