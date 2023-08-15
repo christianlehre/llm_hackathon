@@ -8,7 +8,7 @@ In this hackathon we will set up our own custom chatbot leveraging the OpenAI AP
 
 We will setup our chatbot in a [streamlit](https://docs.streamlit.io/library/get-started) dashboard, using a chat interface from [stremlit-chat](https://pypi.org/project/streamlit-chat/). Moreover, we use the open AI [api](https://platform.openai.com/docs/api-reference/introduction?lang=python) for sending requests to the LLM, as well as components from the [langchain](https://docs.langchain.com/docs/) library. Important components are an in-memory vector database and similarity search using [FAISS](https://github.com/facebookresearch/faiss), text splitters and embeddings. 
 
-The chatbot interface and flow is defined in `app/chatbot.py`, and all utilities are defined in `utils/utils.py`. The boilerplate code will import some core functions from the utilities module, and its up to you to fill in the remaining code.
+The chatbot interface and flow is defined in `app/chatbot.py`, and all utilities are defined in `utils/utils.py`. The boilerplate code imports some core functions to be able to run a MVP of a RAG chatbot, and its up to you to develop the functions. To get you started we have imported some modules you might find useful when developing the chatbot.
 
 The flow presented in `app/chatbot.py` is just a suggestion, feel free to modify it as you wish. However, keep in mind that the RAG technique follow the these steps:
 1) Parse uploaded document
