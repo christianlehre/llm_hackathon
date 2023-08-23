@@ -18,9 +18,79 @@ The flow presented in `app/chatbot.py` is just a suggestion, feel free to modify
 5) Add the results of the similarity search to the hidden context, or system role, to the LLM.
 
 
+## Getting Started
+
+
+### Setup environment
+The boilerplate code was developed using python 3.9.4, so I would recommend to use the same version to avoid potential errors due to a mismatch in environments.
+
+Grab the boilerplate code by opening up your git CMD and running the following commands
+```console
+cd D:
+git clone https://github.com/christianlehre/llm_hackathon
+cd llm_hackathon
+
+```
+
+Make sure you have poetry installed on your system. If not, visit [their documentation](https://python-poetry.org/docs/). You can verify that you have poetry installed on your system by running
+```console
+poetry --version
+````
+If your system is not able to recognize the `poetry` command, make sure you have poetry in your path by running
+
+```console
+set Path=%path%;C:\Users\{your username}\AppData\Roaming\Python\Scripts;
+```
+or 
+```console
+set Path=%path%;C:\Users\{your username}\AppData\Roaming\pypoetry\venv\Scripts;
+```
+depending on the location of the poetry installation. 
+
+Once you have confirmed that you have poetry installed, lets configure it to create a virtual environment in the location of the hackathon directory. From the `llm_hackathon` location, run 
+```console
+poetry config virtualenvs.path .
+```
+
+To set up your environment run the following from the CLI
+```console
+poetry install
+````
+The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment `.venv`. 
+
+Next, we need to activate the virtual environment using the following command
+```console
+\.venv\Scripts\activate.bat
+````
+
+To verify that you have activated your virtual environment, run 
+```console
+poetry show streamlit
+```
+
+### Authenticate to OpenAI
+We need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`.
+
+
+### Running the dashboard
+We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
+```console
+streamlit run app/chatbot.py
+```
+
+Voila - your chatbot is now up an running on your localhost!
+
+Note however that the chatbot will crash when you try to interact with it, and it is your task to make it work! 
+
+In `utils/utils.py` there are some core functions that are needed to make the dashboard functional. Go through the resources listed below and play around with the respective APIs in the notebook `play_around.ipynb` to get a feel on how to implement the functions. 
+
+Good luck!
+
+
 ### Useful resources
 
 [Streamlit API reference](https://docs.streamlit.io/library/api-reference)
+- no need to play around with this if you dont want to change the appearance of the dashboard
 
 [OpenAI API reference](https://platform.openai.com/docs/api-reference/introduction?lang=python)
 - [Chat completion object](https://platform.openai.com/docs/api-reference/chat/create)
@@ -36,36 +106,12 @@ The flow presented in `app/chatbot.py` is just a suggestion, feel free to modify
 - [Recursive Character Text Splitter](https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/recursive_text_splitter)
 
 
-## Getting Started
-
-
-### Setup environment
-The boilerplate code was developed using python 3.9.4, so I would recommend to use the same version to avoid potential errors due to a mismatch in environments.
-
-Make sure you have poetry installed on your system. If not, visit [their documentation](https://python-poetry.org/docs/).
-
-To set up your environment run the following from the CLI
-```console
-poetry intstall
-```
-The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. 
-
-### Authenticate to OpenAI
-We need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`.
-
-
-### Running the dashboard
-We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
-```console
-streamlit run app/chatbot.py
-```
-
-Voila - your chatbot is now up an running on your localhost!
-
 
 
 
 ## Nomenclature
+MVP - Minimum Viable Product
+
 CLI - Command-line interface
 
 LLM - Large Language Model 
