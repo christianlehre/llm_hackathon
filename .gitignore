@@ -4,6 +4,9 @@
 # No need to check-in virtual environment
 .venv
 
+# vscode settings
+.vscode
+
 # Mac-only files 
 .DS_Store
 
