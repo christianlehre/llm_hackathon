@@ -46,21 +46,22 @@ Once you have confirmed that you have poetry installed, lets configure it to cre
 ```console
 poetry config virtualenvs.path .
 ```
+To make sure everything is up to date, run 
+```console
+poetry update
+```
 
 To set up your environment run the following from the CLI
 ```console
 poetry install
 ````
-The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment `.venv`. 
+The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. Name of the environment will take the following form `llm-hackation-{something}-py3.11`. 
 
-To make sure everything is up to date, run 
-```console
-poetry update
-```
 Next, we need to activate the virtual environment using the following command
 ```console
-\.venv\Scripts\activate.bat
+\llm-hackation-{something}-py3.11\Scripts\activate.bat
 ````
+To find the name of the virtual environment, simply run `dir`, or type `llm-hackathon` and press tab to grab the name of the environment using auto-complete.
 
 To verify that you have activated your virtual environment, run 
 ```console
