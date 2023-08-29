@@ -75,14 +75,14 @@ We need to authenticate to OpenAI to send requests to their servers. To do so si
 ### Running the dashboard
 We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
 ```console
-streamlit run app/chatbot.py
+streamlit run app\chatbot.py
 ```
 
 Voila - your chatbot is now up an running on your localhost!
 
 Note however that the chatbot will crash when you try to interact with it, and it is your task to make it work! 
 
-In `utils/utils.py` there are some core functions that are needed to make the dashboard functional. Go through the resources listed below and play around with the respective APIs in the notebook `play_around.ipynb` to get a feel on how to implement the functions. 
+In `utils\utils.py` there are some core functions that are needed to make the dashboard functional. Go through the resources listed below and play around with the respective APIs in the notebook `play_around.ipynb` to get a feel on how to implement the functions. 
 
 Good luck!
 
