@@ -44,7 +44,6 @@ set Path=%path%;c:\windows\;C:\Windows\System32\config\systemprofile\.local\bin;
 
 Once you have confirmed that you have poetry installed, lets configure it to create a virtual environment in the location of the hackathon directory. From the `llm_hackathon` location, run 
 ```console
-poetry config virtualenvs.in-project true
 poetry config virtualenvs.path .
 ```
 
@@ -54,6 +53,10 @@ poetry install
 ````
 The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment `.venv`. 
 
+To make sure everything is up to date, run 
+```console
+poetry update
+```
 Next, we need to activate the virtual environment using the following command
 ```console
 \.venv\Scripts\activate.bat
