@@ -26,7 +26,7 @@ The boilerplate code was developed using python 3.9.4, so I would recommend to u
 
 Grab the boilerplate code by opening up your git CMD and running the following commands
 ```console
-cd D:
+D:
 git clone https://github.com/christianlehre/llm_hackathon
 cd llm_hackathon
 
