@@ -39,16 +39,12 @@ poetry --version
 If your system is not able to recognize the `poetry` command, make sure you have poetry in your path by running
 
 ```console
-set Path=%path%;C:\Users\{your username}\AppData\Roaming\Python\Scripts;
+set Path=%path%;c:\windows\;C:\Windows\System32\config\systemprofile\.local\bin;
 ```
-or 
-```console
-set Path=%path%;C:\Users\{your username}\AppData\Roaming\pypoetry\venv\Scripts;
-```
-depending on the location of the poetry installation. 
 
 Once you have confirmed that you have poetry installed, lets configure it to create a virtual environment in the location of the hackathon directory. From the `llm_hackathon` location, run 
 ```console
+poetry config virtualenvs.in-project true
 poetry config virtualenvs.path .
 ```
 
