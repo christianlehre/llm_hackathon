@@ -59,7 +59,7 @@ The above command will go through the `pyproject.toml` and `poetry.lock` files a
 
 Next, we need to activate the virtual environment using the following command
 ```console
-\llm-hackation-{something}-py3.11\Scripts\activate.bat
+.\llm-hackation-{something}-py3.11\Scripts\activate.bat
 ````
 To find the name of the virtual environment, simply run `dir`, or type `llm-hackathon` and press tab to grab the name of the environment using auto-complete.
 
