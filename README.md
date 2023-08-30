@@ -62,11 +62,12 @@ poetry install
 ````
 The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. Name of the environment will take the following form `llm-hackation-{something}-py3.11`. 
 
-Next, we need to activate the virtual environment using the following command
+Next, we need to activate the virtual environment using the following command. Make sure to replace `{something}` to align with the name of your virtual environment. 
+To find the name of the virtual environment, simply run `dir`, or type `llm-hackathon` and press tab to grab the name of the environment using auto-complete.
 ```console
 .\llm-hackation-{something}-py3.11\Scripts\activate.bat
 ````
-To find the name of the virtual environment, simply run `dir`, or type `llm-hackathon` and press tab to grab the name of the environment using auto-complete.
+
 
 To verify that you have activated your virtual environment, run 
 ```console
