@@ -20,9 +20,14 @@ The flow presented in `app/chatbot.py` is just a suggestion, feel free to modify
 
 ## Getting Started
 
+### Connecting to your Virtual Machine
+Navigate to this [page](https://portal.azure.com/#@StatoilSRM.onmicrosoft.com/resource/subscriptions/d86ec129-e76d-41b1-a272-570e56109118/resourceGroups/DWS_GATHERING_20230831/overview) and login with your Equinor credentials.
+
+Find and connect to your virtual desktop. The name of the machine is on the format 
+`vm-{your short name}`.
 
 ### Setup environment
-The boilerplate code was developed using python 3.9.4, so I would recommend to use the same version to avoid potential errors due to a mismatch in environments.
+Once you are inside your virtual machine you need to clone the repo and setup your environment.
 
 Grab the boilerplate code by opening up your git CMD and running the following commands
 ```console
@@ -69,8 +74,13 @@ poetry show streamlit
 ```
 
 ### Authenticate to OpenAI
-We need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`.
+We need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`. 
 
+To do so one can e.g. run the following command
+```console
+echo OPENAI_API_KEY={paste key here} > .env
+```
+You will be provided an API-key at the hackathon, so no need to create one yourself.
 
 ### Running the dashboard
 We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
