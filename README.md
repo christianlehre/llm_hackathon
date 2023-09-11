@@ -3,6 +3,8 @@ This repo contains some boilerplate code for setting up a custom chatbot that yo
 
 Be aware that this setup sends requests over the OpenAI API, and as such the prompts are stored on OpenAIs servers in USA for max 30 days to monitor for abuse and misuse. Consequently, we should not use this setup to upload sensitive nor proprietary data.
 
+Alternatively you can run an open-source model on remote compute or on your local machine - you decide.
+
 ## Introduction 
 In this hackathon we will set up our own custom chatbot leveraging the OpenAI API. Moreover, we will use the Retrieval Augmentation Generation (RAG) technique to allow us to query our own data sources without having to fine-tune the LLM. 
 
@@ -20,32 +22,20 @@ The flow presented in `app/chatbot.py` is just a suggestion, feel free to modify
 
 ## Getting Started
 
-### Connecting to your Virtual Machine
-Navigate to this [page](https://portal.azure.com/#@StatoilSRM.onmicrosoft.com/resource/subscriptions/d86ec129-e76d-41b1-a272-570e56109118/resourceGroups/DWS_GATHERING_20230831/overview) and login with your Equinor credentials.
-
-Find and connect to your virtual desktop. The name of the machine is on the format 
-`vm-{your short name}`.
-
 ### Setup environment
-Once you are inside your virtual machine you need to clone the repo and setup your environment.
-
-Grab the boilerplate code by opening up your git CMD and running the following commands
+Grab the boilerplate code by cloning this repository
 ```console
-D:
 git clone https://github.com/christianlehre/llm_hackathon
 cd llm_hackathon
 
 ```
+Because this is a poetry project we will use poetry to manage package dependencies.
 
-Make sure you have poetry installed on your system. If not, visit [their documentation](https://python-poetry.org/docs/). You can verify that you have poetry installed on your system by running
+Make sure you have poetry installed on your system. If not, visit [their documentation](https://python-poetry.org/docs/) and look for the installation guide. You can verify that you have poetry installed on your system by running
 ```console
 poetry --version
 ````
-If your system is not able to recognize the `poetry` command, make sure you have poetry in your path by running
-
-```console
-set Path=%path%;c:\windows\;C:\Windows\System32\config\systemprofile\.local\bin;
-```
+If your system is not able to recognize the `poetry` command, make sure you have poetry in your path.
 
 Once you have confirmed that you have poetry installed, lets configure it to create a virtual environment in the location of the hackathon directory. From the `llm_hackathon` location, run 
 ```console
@@ -56,18 +46,21 @@ To make sure everything is up to date, run
 poetry update
 ```
 
-To set up your environment run the following from the CLI
+To set up your environment run the following from your terminal
 ```console
 poetry install
 ````
-The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. Name of the environment will take the following form `llm-hackation-{something}-py3.11`. 
+The above command will go through the `pyproject.toml` and `poetry.lock` files and install all the specified packages and dependencies in a new environment. Name of the environment will take the following form `llm-hackathon-{something}-py{python version}`. 
 
-Next, we need to activate the virtual environment using the following command. Make sure to replace `{something}` to align with the name of your virtual environment. 
-To find the name of the virtual environment, simply run `dir`, or type `llm-hackathon` and press tab to grab the name of the environment using auto-complete.
+Next, we need to activate the virtual environment using the following command.
+If your one a unix-based system, run
 ```console
-.\llm-hackation-{something}-py3.11\Scripts\activate.bat
-````
-
+source llm-hackathon-{something}-py{python version}/bin/activate
+```
+Or if youre on windows, run
+```console
+llm-hackathon-{something}-py{python version}/Scripts/activate.bat
+```
 
 To verify that you have activated your virtual environment, run 
 ```console
@@ -75,13 +68,13 @@ poetry show streamlit
 ```
 
 ### Authenticate to OpenAI
-We need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`. 
+If you want to use one of Open AIs models, e.g. `gpt-3.5-turbo`, you will need to authenticate to OpenAI to send requests to their servers. To do so simply create a file called `.env` and populate it with `OPENAI_API_KEY=<your api key goes here>`. 
 
-To do so one can e.g. run the following command
-```console
-echo OPENAI_API_KEY={paste key here} > .env
-```
-You will be provided an API-key at the hackathon, so no need to create one yourself.
+Navigate to [openai.com](https://openai.com) to generate an API-key
+
+**NOTE** when using OpenAIs models all your requests are sent to their serviers in US where the content is stored for 30 days. With that said, it should be obvious that you dont upload nor type any sensitive information in your prompt.
+
+Alternatively you can try to use an open-source model, e.g. LLama-2, and run it on your laptop. Based on your specs this is likely to be slower than making predictions using an API served on beefy infra.
 
 ### Running the dashboard
 We use streamlit to setup a custom chat-interface. To run the dashboard locally you simply run 
@@ -115,16 +108,3 @@ Good luck!
 - [Sentence Transformers Embeddings](https://python.langchain.com/docs/integrations/text_embedding/sentence_transformers)
 
 - [Recursive Character Text Splitter](https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/recursive_text_splitter)
-
-
-
-
-
-## Nomenclature
-MVP - Minimum Viable Product
-
-CLI - Command-line interface
-
-LLM - Large Language Model 
-
-RAG - Retrieval Augmentation Generation 
