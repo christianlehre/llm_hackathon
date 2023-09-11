@@ -27,7 +27,7 @@ def get_gpt_response(
     Extra challenge: Add a streamlit widget on the dashboard (in app/chatbot.py) that
     allows the user to specify the temperature.
 
-    Hint: Look at the pyhton sdk documentation from OpenAI, or just ask your favorite chatbot :)
+    Hint: Look at the python sdk documentation from OpenAI, or just ask your favorite chatbot :)
     https://platform.openai.com/docs/libraries/python-library
 
     Args:
